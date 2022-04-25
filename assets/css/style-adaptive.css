@@ -1,7 +1,7 @@
 @media screen and (min-width: 500px) {
     .Settings_Btn {
         position: absolute;
-        width: 4.5em;
+        width: 4.7em;
     }
 
     .settings {
@@ -9,7 +9,7 @@
         margin-top: 0.1em;
         
         width: 350px;
-        height: 300px;
+        height: 305px;
         
         background: linear-gradient(341.83deg, #EA2B2B -3.66%, #115A71 87.9%);
     
@@ -24,7 +24,7 @@
 
     .footer {
         width: 350px;
-        height: 95px;
+        height: 100px;
     
         margin-top: 0.9em;
     }

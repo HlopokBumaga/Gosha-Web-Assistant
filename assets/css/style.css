@@ -66,6 +66,8 @@ hr {
     width: 7em;
     height: 7em;
 
+    display: block;
+
     transition: ease-in-out 0.4s;
 }
 
@@ -88,6 +90,16 @@ hr {
     align-items: center;
     flex-direction: column;
 }
+
+.text__recog {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+    font-weight: 500;
+
+    transition: ease-in-out 0.4s;
+}
 /*------------------------------ Настройки ------------------------------*/
 .Settings_Btn {
     position: absolute;
@@ -99,7 +111,7 @@ hr {
     margin-top: 0.1em;
     
     width: 260px;
-    height: 253px;
+    height: 260px;
     
     background: linear-gradient(341.83deg, #EA2B2B -3.66%, #115A71 87.9%);
 
@@ -179,7 +191,7 @@ hr {
 
 .footer {
     width: 260px;
-    height: 73px;
+    height: 80px;
 
     margin-top: 0.9em;
 }
@@ -242,7 +254,7 @@ hr {
 .name {
     font-family: 'Montserrat', sans-serif;
 
-    margin-top: -2.7em;
+    margin-top: -2.6em;
     margin-left: 0.5em;
 
     font-style: normal;
