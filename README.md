@@ -52,7 +52,7 @@ This is how Gosha looks on the phone:
 ![App Screenshot](https://i.ibb.co/yn7ndXb/2022-04-23-144400146.png)
 
 ## Support & License
-Link to GoshaWeb: http://goshaweb.ezyro.com/  
+Link to GoshaWeb: http://goshaweb.netlify.app
 Feedback mail: goshafeedback@gmail.com
 
 Copyright © DimaK 2021-2022  
