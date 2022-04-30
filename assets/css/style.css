@@ -1,3 +1,7 @@
+/* Переменные */
+:root {
+  --img-rotate-deg: 360deg;
+}
 /* Теги */
 body, html {
     margin: 0px;
@@ -12,6 +16,7 @@ body, html {
 
     overflow-x: hidden;
     overflow-y: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 hr {
@@ -25,7 +30,11 @@ hr {
 }
 
 /* Анимации */
-@keyframes fade-in {
+@keyframes fade-in{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(var(--img-rotate-deg)); }
+}
+/* @keyframes fade-in {
     0% {
         transform: rotate(90deg);
     }
@@ -38,7 +47,7 @@ hr {
         width: 7em;
         height: 7em;
     }
-}
+} */
 
 @keyframes spanim {
     0% {
@@ -61,21 +70,24 @@ hr {
 /* Классы */
 /*------------------------------ Gosha ------------------------------*/
 .Gosha {
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
     
     width: 7em;
     height: 7em;
 
     display: block;
 
-    transition: ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
 }
 
-.sp {
+.blur {
+  opacity: 0.5;
+  /* filter: brightness(50%); */
+}
+.speak-light {
     width: 8em;
     height: 1em;
 
-    opacity: 0;
     animation: spanim 1s infinite;
 
     transition: ease-in-out 0.4s;
@@ -93,7 +105,6 @@ hr {
 
 .text__recog {
     color: white;
-    font-family: 'Montserrat', sans-serif;
 
     text-align: center;
     font-weight: 500;
@@ -117,11 +128,12 @@ hr {
 
     border-radius: 3px;
 
-    opacity: 0;
-
-    transition: ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
 
     position: absolute;
+}
+.hide {
+    opacity: 0;
 }
 
 .sett_ico {
@@ -133,7 +145,6 @@ hr {
 }
 
 .content__version {
-    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 1em;
@@ -146,7 +157,6 @@ hr {
     margin-left: -0.02em;
     margin-top: -0.5em;
     
-    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 15px;
@@ -165,7 +175,6 @@ hr {
 
     height: 0.3em;
     
-    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 0.8em;
@@ -177,14 +186,13 @@ hr {
 .opens {
     margin-left: 1.4em;
     
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 0.55em;
 
     color: hsla(256, 96%, 69%, 1);
 }
 
-.c {
+.container {
     display: flex;
     flex-direction: row;
 }
@@ -196,7 +204,7 @@ hr {
     margin-top: 0.9em;
 }
 
-.footer__cont {
+.footer__content {
     position: absolute;
 }
 
@@ -219,7 +227,6 @@ hr {
     margin-left: 0.5em;
     margin-top: 1.6em;
     
-    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 1em;
@@ -238,7 +245,6 @@ hr {
 }
 
 .link__faq {
-    font-family: 'Montserrat', sans-serif;
     
     font-style: normal;
     font-weight: 400;
@@ -252,7 +258,6 @@ hr {
 }
 
 .name {
-    font-family: 'Montserrat', sans-serif;
 
     margin-top: -2.6em;
     margin-left: 0.5em;
@@ -268,8 +273,6 @@ hr {
 }
 
 .name2 {
-    font-family: 'Montserrat', sans-serif;
-
     margin-top: -1.6em;
     margin-left: 0.5em;
 
