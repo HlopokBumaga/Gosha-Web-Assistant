@@ -11,14 +11,14 @@ const speakLight = document.getElementById("speak-light");
 let countSett = 1;
 let dsBtn = true;
 
-// А почему называется camera?
+// А почему называется camera? Это звук переключения камеры из игры five nights at freedy`s 
 const camera = new Audio('assets/sounds/speak/blip3.mp3');
 // Function
 // Gosha
 
 gosha.addEventListener("click", function() {
     if (dsBtn == true) {
-        // Для чего? 
+        // Для чего? Это я прочитал из гайдов. Эта штука позволяет воспроизводить анимацию из класса css
         // gosha.classList.remove("fade-in");
         // gosha.offsetWidth = gosha.offsetWidth;
 
