@@ -143,25 +143,9 @@
     .name {
         font-family: 'Montserrat', sans-serif;
 
-        margin-top: -2.8em;
+        margin-top: -2em;
         margin-left: 0.5em;
     
-        font-style: normal;
-        font-weight: 400;
-        font-size: 0.7em;
-        line-height: 10px;
-    
-        color: white;
-
-        position: absolute;
-    }
-    
-    .name2 {
-        font-family: 'Montserrat', sans-serif;
-
-        margin-top: -1.7em;
-        margin-left: 0.5em;
-
         font-style: normal;
         font-weight: 400;
         font-size: 0.7em;

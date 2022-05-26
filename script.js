@@ -4,18 +4,30 @@ const gosha = document.getElementById("Gosha");
 const speakLight = document.getElementById("sp");
 const outputText = document.querySelector(".text__recog");
 
-const camera = new Audio('assets/sounds/speak/blip3.mp3');
-const startSound = new Audio('assets/sounds/3.mp3');
 const jokeAudio = new Audio;
 const helpSound = new Audio;
 
 let countSett = 1;
 let dsBtn = true;
+let requestError = 0;
+let nameUser = localStorage.getItem("name");
 
 const appeals = {
     "time": ["час", "часы", "часа", "часов", "часу", "часам", "часом", "часами", "часе", "часах", "время", "времена", "времени", "временам", "временем", "временами", "временах"],
     "joke": ["шутка", "шутки", "шуток", "шутке", "шуткам", "шутку", "шуткою", "шутками", "шутках"],
     "help": ["умею", "умеешь", "умеет", "умеем", "умеете", "умеют", "команда", "команды", "команд", "команде", "командам", "команду", "командой", "командою", "командами", "командах"]
+}
+
+if (nameUser == null) {
+    let inputUserName = prompt("Введи своё имя: ")
+    if (inputUserName == null || inputUserName == "") {
+        alert("Введи имя пж :3 (перезагрузи страницу)");
+    } else {
+        localStorage.setItem("name", inputUserName);
+        window.location.reload()
+    }
+} else {
+    outputText.innerHTML = `Привет, ${nameUser}. Чем сегодня займемся?`
 }
 
 // Function
@@ -24,26 +36,25 @@ function getRandomArbitrary(min, max) {
 }
 
 function time() {
+    requestError = 1;
     let today = new Date();
     outputText.innerHTML = today.getHours().toString().padStart(2, "0") + ":" + today.getMinutes().toString().padStart(2, "0");
 }
 
 function joke() {
-    let randomNum = getRandomArbitrary(1, 9);
-    if (randomNum != 8) {
-        jokeAudio.src = `assets/sounds/speak/${randomNum}.mp3`;
-        jokeAudio.play();
-    } else {
-        console.log("Фингя анекдот, переделываю");
-    }
+    requestError = 1;
+    let randomNum = getRandomArbitrary(1, 7);
+    jokeAudio.src = `assets/sounds/speak/${randomNum}.mp3`;
+    jokeAudio.play();
 }
 
 function help() {
+    requestError = 1;
     helpSound.src = "assets/sounds/speak/10.mp3"
     helpSound.play();
 
     setTimeout(function() {
-        outputText.innerHTML = "Время, помощь, погода, шутки, музыка";
+        outputText.innerHTML = "Время, помощь, шутки, музыка";
     }, 4000);
     
 }
@@ -62,7 +73,7 @@ function outputResult() {
             let arr = what.split(' ');
             
             for (let i = 0; arr.length > i; i++) {
-                if (appeals["time"].includes(arr[i])) {
+                if (appeals["time"].includes(arr[i]) === true) {
                     setTimeout(function() {
                         time();
                         
@@ -70,7 +81,7 @@ function outputResult() {
                         gosha.style.filter = "brightness(100%)";
                         dsBtn = true;
                     }, 1000);
-                } if (appeals["joke"].includes(arr[i])) {
+                } if (appeals["joke"].includes(arr[i]) === true) {
                     joke();
                     
                     jokeAudio.onloadeddata = function() {
@@ -81,7 +92,7 @@ function outputResult() {
                             dsBtn = true;
                         }, rty);
                     }
-                } if (appeals["help"].includes(arr[i])) {
+                } if (appeals["help"].includes(arr[i]) === true) {
                     help();
                     
                     helpSound.onloadeddata = function() {
@@ -92,8 +103,18 @@ function outputResult() {
                             dsBtn = true;
                         }, rty);
                     }
+                } 
+            }
+            setTimeout(function() {
+                if (requestError == 0) {
+                    speakLight.style.opacity = "0";
+                    gosha.style.filter = "brightness(100%)";
+                    dsBtn = true;
+                } else {
+                    requestError = 0;
                 }
-            } 
+            }, 2000);
+            
         }
     };
     recognizer.start();
@@ -102,8 +123,6 @@ function outputResult() {
 // Gosha
 gosha.addEventListener("click", function() {
     if (dsBtn == true) {
-        startSound.play();
-
         gosha.classList.remove("fade-in");
         gosha.offsetWidth = gosha.offsetWidth;
         gosha.classList.add("fade-in");
@@ -121,11 +140,9 @@ gosha.addEventListener("click", function() {
 settBtn.addEventListener("click", function () {
     if (countSett == 0) {
         settings.style.opacity = "0";
-		camera.play();
         countSett += 1;
     } else {
         settings.style.opacity = "1";
-		camera.play();
         countSett -= 1;
     }
 });
