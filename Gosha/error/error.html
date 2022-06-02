@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>error</title>
+
+        <style>
+            body, html {
+                width: 100vw;
+                height: 100vh;
+
+                background-color: black;
+
+                overflow: hidden;
+                position: fixed;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bsod {
+                position: absolute;
+                z-index: -1;
+
+                height: 100vh;
+
+                filter: brightness(50%);
+            }
+
+            .errorName {
+                background-color: black;
+                width: 50%;
+
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                padding: 1em;
+
+                border-radius: 10px;
+            }
+
+            .errorText {
+                color: white;
+
+                text-align: center;
+            }
+
+            p {
+                color: white;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="errorName">
+            <h2 class="errorText">Ошибка Speech Recognition</h2>
+            <p>Упс, похоже что ваш браузер не поддерживает технологию Speech Recognition. GoshaWeb не способен работать без неё. Попробуйте открыть сайт в другом браузере</p>
+        </div>
+        <img src="../assets/img/Bsod.jpg" alt="" class="bsod">
+    </body>
+</html>

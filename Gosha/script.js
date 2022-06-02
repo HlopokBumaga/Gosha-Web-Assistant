@@ -1,3 +1,10 @@
+if (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition){
+	console.log('Speech Recognition system is work! 😀');
+    console.log('GoshaWeb by Exerium');
+} else {
+	window.location.href = "error/error.html";
+}
+
 const settBtn = document.querySelector("#Settings_Btn");
 const settings = document.getElementById("settings");
 const gosha = document.getElementById("Gosha");
@@ -6,6 +13,7 @@ const outputText = document.querySelector(".text__recog");
 
 const jokeAudio = new Audio;
 const helpSound = new Audio;
+const searchSound = new Audio("assets/sounds/speak/12.mp3");
 
 let countSett = 1;
 let dsBtn = true;
@@ -54,7 +62,7 @@ function help() {
     helpSound.play();
 
     setTimeout(function() {
-        outputText.innerHTML = "Время, помощь, шутки, музыка";
+        outputText.innerHTML = "Время, помощь, шутки, музыка, поиск в интернете";
     }, 4000);
     
 }
@@ -107,9 +115,11 @@ function outputResult() {
             }
             setTimeout(function() {
                 if (requestError == 0) {
-                    speakLight.style.opacity = "0";
-                    gosha.style.filter = "brightness(100%)";
-                    dsBtn = true;
+                    searchSound.play();
+
+                    setTimeout(function () {
+                        window.location.href = `https://yandex.ru/search/?text=${what}`;
+                    }, 4000)
                 } else {
                     requestError = 0;
                 }

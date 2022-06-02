@@ -8,6 +8,22 @@
 - Speed
 - Availability
 
+## Versions
+> ### GoshaWeb Alpha 1.0
+- The very `first version`. Has no functions, `only speaks`.
+---
+> ### GoshaWeb Alpha 2.0
+- `Adaptability` and that's it...
+---
+> ### GoshaWeb Alpha 3.0
+- Added features such as: `Speech recognition, time, jokes, help`
+---
+> ### GoshaWeb Alpha 4.0
+- Fixed bugs
+---
+> ### GoshaWeb Alpha 5.0
+- New internet `search function`, bug fixes, new `README`
+
 ## Instruction manual
 ![App Screenshot](https://i.ibb.co/YZMGPPZ/2022-04-23-143041436.png)
 
@@ -52,8 +68,7 @@ This is how Gosha looks on the phone:
 ![App Screenshot](https://i.ibb.co/yn7ndXb/2022-04-23-144400146.png)
 
 ## Support & License
-Link to GoshaWeb: http://goshaweb.ezyro.com/  
+Link to GoshaWeb: http://goshaweb.netlify.app/  
 Feedback mail: goshafeedback@gmail.com
 
-Copyright © DimaK 2021-2022  
-ItGym Software Production
+Copyright © Exerium 2021-2022  
