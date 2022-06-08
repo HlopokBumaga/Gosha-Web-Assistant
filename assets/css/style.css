@@ -1,0 +1,145 @@
+/* Теги */
+body, html {
+    margin: 0px;
+
+    height: 100vh;
+    width: 100vw;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    position: fixed;
+
+    background: rgb(18,19,18);
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr {
+    margin-top: 1.3em;
+    margin-left: 0.9em;
+    
+    color: hsla(216, 82%, 59%, 1);
+    border: 1px solid #3F84ED;
+    width: 0px;
+    height: 30px;
+}
+
+/* Анимации */
+@keyframes fade-in {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    25% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        width: 7em;
+        height: 7em;
+    }
+}
+
+@keyframes spanim {
+    0% {
+        filter: brightness(100%);
+    }
+
+    50% {
+        filter: brightness(50%);
+    }
+
+    100% {
+        filter: brightness(100%);
+    }
+}
+
+@keyframes txtanim {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes settanim {
+    0% {
+        transform: rotate(150deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bganim {
+    0% {
+        filter: brightness(100%);
+    }
+    100% {
+        filter: brightness(0%);
+    }
+}
+
+.fade-in {
+    animation: fade-in 1s;
+}
+
+/* Классы */
+/*------------------------------ Gosha ------------------------------*/
+.Gosha {
+    transform: rotate(360deg);
+    
+    width: 7em;
+    height: 7em;
+
+    display: block;
+
+    transition: ease-in-out 0.4s;
+}
+
+.sp {
+    width: 8em;
+    height: 1em;
+
+    opacity: 0;
+    animation: spanim 1s infinite;
+
+    transition: ease-in-out 0.4s;
+}
+
+.gosha__content {
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text__recog {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+    font-weight: 500;
+
+    animation: txtanim 1s forwards;
+}
+
+.sett {
+    width: 2em;
+    position: absolute;
+
+    margin: 0.5em;
+}
+
+@media screen and (min-width: 500px) {
+    .sett {
+        width: 3em;
+        height: 3em;
+    }
+}

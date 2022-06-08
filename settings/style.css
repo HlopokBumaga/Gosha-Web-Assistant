@@ -1,0 +1,353 @@
+@keyframes bganim {
+    0% {
+        filter: brightness(100%);
+    }
+    100% {
+        filter: brightness(0%);
+    }
+}
+
+body, html {
+    background: rgb(18,19,18);
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    position: fixed;
+
+    margin: 0px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/*-------- Свитчер --------*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    margin-top: 4em;
+    margin-left: 1em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*-------- Контент --------*/
+
+.back {
+    padding: 0.5em;
+    margin: 0 auto;
+    margin-top: 0.5em;
+
+    color: black;
+    text-decoration: none;
+
+    background-color: white;
+
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3em;
+
+    border-radius: 10px;
+}
+
+.text {
+    position: absolute;
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+
+    margin-left: 4.5em;
+    margin-top: -1.7em;
+}
+
+.text2 {
+    position: absolute;
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+
+    margin-left: 0.8em;
+    margin-top: 6.5em;
+}
+
+/*--- Данные о Gosha ---*/
+.content_box {
+    background: linear-gradient(341.83deg, #EA2B2B -3.66%, #115A71 87.9%);
+    height: 14.3em;
+    width: 20em;
+
+    margin: 0 auto;
+    margin-top: 10px;
+
+    border-radius: 30px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.socks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 0.5em;
+}
+
+.icon {
+    width: 6em;
+
+    margin-left: 0.5em;
+}
+
+.ver {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 300;
+    font-size: 1.4em;
+}
+
+.two {
+    margin-left: 0.5em;
+}
+
+.author {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 300;
+
+    margin-top: -1em;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+.content {
+    background: rgb(223,13,208);
+    background: linear-gradient(150deg, rgba(223,13,208,1) 0%, rgba(83,36,170,1) 100%);
+    
+    height: 19em;
+    width: 20em;
+
+    margin: 0 auto;
+
+    border-radius: 30px;
+}
+
+.cnt {
+    margin-top: 2em;
+}
+
+.three {
+    position: absolute;
+    width: 20em;
+
+    margin-top: -3em;
+}
+
+.info {
+    font-family: "montserrat", sans-serif;
+    color: rgb(201, 194, 194);
+    font-weight: 400;
+    font-size: 0.8em;
+
+    margin-top: 4.5em;
+    margin-left: 1.3em;
+
+    width: 22em;
+
+    text-align: justify;
+
+    position: absolute;
+}
+
+.opensource {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 200;
+    font-size: 1.1em;
+
+    margin-left: 1em;
+    margin-top: 0.4em;
+}
+
+.link {
+    font-family: "montserrat", sans-serif;
+    color: lightgreen;
+    font-weight: 400;
+    font-size: 0.7em;
+
+    margin-left: 1.6em;
+    margin-top: -1em;
+}
+
+.donate {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 200;
+    font-size: 1.1em;
+
+    margin-left: 1em;
+    margin-top: 0.8em;
+}
+
+span {
+    font-size: 0.8em;
+}
+
+.slider1 {
+    width: 13em;
+    height: 7em;
+
+    position: absolute;
+
+    margin-top: 10em;
+
+    margin-left: 3.4em;
+
+    border-radius: 20px;
+}
+
+.prev {
+    margin-top: 12.8em;
+    margin-left: 1.3em;
+    position: absolute;
+
+    color: white;
+
+}
+
+.next {
+    margin-top: 12.8em;
+    margin-left: 18em;
+    position: absolute;
+
+    color: white;
+
+}
+
+.item {
+    display: none;
+    object-fit: cover;
+    border: none;
+    box-shadow: none;
+
+    border-radius: 20px;
+    border: 2px solid white;
+
+    width: 13em;
+    height: 7em;
+}
+
+#w {
+    background: rgb(18,19,18);
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);
+}
+
+#e {
+    background: rgb(18,19,18);
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(219, 88, 13) 100%);
+}
+
+#r {
+    background: rgb(18,19,18);
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(8, 228, 107) 100%);
+}
+
+#t {
+    background: rgb(18,19,18);
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(188, 12, 241) 100%);
+}
+
+#y {
+    background-color: white;
+}
+
+#u {
+    background-color: black;
+}
+
+.slider-dots {
+    position: absolute;
+
+    margin-top: 17.6em;
+    margin-left: 6.3em;
+}
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}

@@ -4,68 +4,23 @@
         <meta charset="UTF-8">
         <title>GoshaWeb</title>
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="shortcut icon" href="Gosha/assets/img/GoshaIcon/GoshaNew.png" type="image/png">
+        <link rel="shortcut icon" href="assets/img/GoshaIcon/GoshaNew.png" type="image/png">
+        <link rel="stylesheet" href="assets/css/style.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-        <style>
-            body, html {
-                background-color: black;
-
-                overflow: hidden;
-                position: fixed;
-
-                width: 100vw;
-                height: 100vh;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-
-            @keyframes spanim {
-                0% {
-                    filter: brightness(100%);
-                }
-
-                50% {
-                    filter: brightness(50%);
-                }
-
-                100% {
-                    filter: brightness(100%);
-                }
-            }
-
-            .img {
-                width: 7em;
-                height: 7em;
-
-                animation: spanim 2s infinite;
-            }
-
-            h2 {
-                color: white;
-
-                font-family: 'Montserrat', sans-serif;
-                font-weight: normal;
-            }
-        </style>
     </head>
-    <body>
-        <img src="Gosha/assets/img/GoshaIcon/GoshaNew.png" alt="GoshaLoad" class="img">
-        <h2>Gosha Web</h2>
-
-        <script>
-            setTimeout(function () {
-                window.location.href = "Gosha/index.html";
-            }, 4000);
-        </script>
+    <body class="body">
+        <img src="assets/img/settings.svg" alt="Settings" class="sett">
+        <div class="gosha__content">
+            <h4 class="text__recog"></h4>
+            <img src="assets/img/GoshaIcon/GoshaNew2.png" alt="Gosha__Btn" class="Gosha" id="Gosha">
+            <img src="assets/img/ESp.png" alt="Speak" class="sp" id="sp">
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>

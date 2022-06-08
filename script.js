@@ -2,7 +2,14 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpee
 	console.log('Speech Recognition system is work! 😀');
     console.log('GoshaWeb by Exerium');
 } else {
-	window.location.href = "error/error.html";
+    body.style.animation = "bganim 1s forwards";
+    setTimeout(function () {
+        window.location.href = "error/error.html";
+    }, 1000);
+}
+
+if (localStorage.getItem("voiceActive") == 'true') {
+    voicecActive();
 }
 
 const settBtn = document.querySelector("#Settings_Btn");
@@ -10,6 +17,8 @@ const settings = document.getElementById("settings");
 const gosha = document.getElementById("Gosha");
 const speakLight = document.getElementById("sp");
 const outputText = document.querySelector(".text__recog");
+const settingsBtn = document.querySelector(".sett");
+const body = document.querySelector(".body");
 
 const jokeAudio = new Audio;
 const helpSound = new Audio;
@@ -19,6 +28,8 @@ let countSett = 1;
 let dsBtn = true;
 let requestError = 0;
 let nameUser = localStorage.getItem("name");
+let notresult = 0;
+let notresultmain = 0;
 
 const appeals = {
     "time": ["час", "часы", "часа", "часов", "часу", "часам", "часом", "часами", "часе", "часах", "время", "времена", "времени", "временам", "временем", "временами", "временах"],
@@ -67,6 +78,47 @@ function help() {
     
 }
 
+function voicecActive() {
+    let recognizer = new webkitSpeechRecognition();
+    recognizer.interimResults = true;
+    recognizer.lang = 'ru-Ru';
+
+    recognizer.onresult = function (event) {
+        var result = event.results[event.resultIndex];
+        notresult = 1;
+        if (result.isFinal) {
+            let what = result[0].transcript.toLowerCase()
+            let arr = what.split(' ');
+            
+            for (let i = 0; arr.length > i; i++) {
+                if (arr[i] == "гоша") {
+                    gosha.classList.remove("fade-in");
+                    gosha.offsetWidth = gosha.offsetWidth;
+                    gosha.classList.add("fade-in");
+                            
+                    dsBtn = false
+                    gosha.style.filter = "brightness(50%)";
+                            
+                    speakLight.style.opacity = "1";
+                            
+                    outputResult();
+                } else {
+                    voicecActive();
+                    break
+                }
+            }            
+        }
+    };
+    recognizer.start();
+    setTimeout(function () {
+        if (notresult == 0) {
+            voicecActive();
+        } else {
+            notresult = 0;
+        }
+    }, 10000);
+}
+
 function outputResult() {
     let recognizer = new webkitSpeechRecognition();
     recognizer.interimResults = true;
@@ -76,6 +128,8 @@ function outputResult() {
         var result = event.results[event.resultIndex];
         if (result.isFinal) {
             outputText.innerHTML = result[0].transcript;
+
+            notresultmain = 1;
             
             let what = result[0].transcript.toLowerCase()
             let arr = what.split(' ');
@@ -88,6 +142,9 @@ function outputResult() {
                         speakLight.style.opacity = "0";
                         gosha.style.filter = "brightness(100%)";
                         dsBtn = true;
+                        if (localStorage.getItem("voiceActive") == 'true') {
+                            voicecActive();
+                        } 
                     }, 1000);
                 } if (appeals["joke"].includes(arr[i]) === true) {
                     joke();
@@ -98,6 +155,9 @@ function outputResult() {
                             speakLight.style.opacity = "0";
                             gosha.style.filter = "brightness(100%)";
                             dsBtn = true;
+                            if (localStorage.getItem("voiceActive") == 'true') {
+                                voicecActive();
+                            } 
                         }, rty);
                     }
                 } if (appeals["help"].includes(arr[i]) === true) {
@@ -109,6 +169,9 @@ function outputResult() {
                             speakLight.style.opacity = "0";
                             gosha.style.filter = "brightness(100%)";
                             dsBtn = true;
+                            if (localStorage.getItem("voiceActive") == 'true') {
+                                voicecActive();
+                            }
                         }, rty);
                     }
                 } 
@@ -128,6 +191,23 @@ function outputResult() {
         }
     };
     recognizer.start();
+    setTimeout(function () {
+        if (notresultmain == 0) {
+            if (localStorage.getItem("voiceActive") == 'true') {
+                speakLight.style.opacity = "0";
+                gosha.style.filter = "brightness(100%)";
+                dsBtn = true;
+                voicecActive();
+            } else {
+                speakLight.style.opacity = "0";
+                gosha.style.filter = "brightness(100%)";
+                dsBtn = true;
+            }
+
+        } else {
+            notresultmain = 0;
+        }
+    }, 10000);
 }
 
 // Gosha
@@ -147,12 +227,10 @@ gosha.addEventListener("click", function() {
 });
 
 // Настройки
-settBtn.addEventListener("click", function () {
-    if (countSett == 0) {
-        settings.style.opacity = "0";
-        countSett += 1;
-    } else {
-        settings.style.opacity = "1";
-        countSett -= 1;
-    }
+settingsBtn.addEventListener("click", function () {
+    settingsBtn.style.animation = "settanim 0.5s";
+    body.style.animation = "bganim 1s forwards";
+    setTimeout(function () {
+        window.location.href = "settings/index.html";
+    }, 1000);
 });
