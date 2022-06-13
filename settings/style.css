@@ -7,6 +7,15 @@
     }
 }
 
+@keyframes bganimstart {
+    0% {
+        filter: brightness(0%);
+    }
+    100% {
+        filter: brightness(100%);
+    }
+}
+
 body, html {
     background: rgb(18,19,18);
     background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);
@@ -129,7 +138,7 @@ input:checked + .slider:before {
     font-weight: 400;
 
     margin-left: 0.8em;
-    margin-top: 6.5em;
+    margin-top: 6.7em;
 }
 
 /*--- Данные о Gosha ---*/
@@ -263,91 +272,93 @@ span {
     font-size: 0.8em;
 }
 
-.slider1 {
-    width: 13em;
-    height: 7em;
+.text__warn {
+    font-size: 1em;
+    font-weight: bold;
+}
 
-    position: absolute;
-
+/*--- wallpaper ---*/
+.wallpapers {
     margin-top: 10em;
 
-    margin-left: 3.4em;
-
-    border-radius: 20px;
-}
-
-.prev {
-    margin-top: 12.8em;
-    margin-left: 1.3em;
     position: absolute;
+    margin-left: 1em;
 
+    width: 17.5em;
+    height: 8em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blue, .green, .orange, .purple {
     color: white;
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
 
-}
+    padding: 0.5em;
 
-.next {
-    margin-top: 12.8em;
-    margin-left: 18em;
-    position: absolute;
+    width: 7em;
 
-    color: white;
+    text-align: center;
 
-}
+    border-radius: 10px;
 
-.item {
-    display: none;
-    object-fit: cover;
-    border: none;
-    box-shadow: none;
-
-    border-radius: 20px;
-    border: 2px solid white;
-
-    width: 13em;
-    height: 7em;
-}
-
-#w {
-    background: rgb(18,19,18);
     background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);
 }
 
-#e {
-    background: rgb(18,19,18);
-    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(219, 88, 13) 100%);
+.green {
+    margin-top: 0.5em;
+
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(7, 240, 112) 100%);
+
 }
 
-#r {
-    background: rgb(18,19,18);
-    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(8, 228, 107) 100%);
+.orange {
+    margin-top: 0.5em;
+
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(240, 147, 7) 100%);
 }
 
-#t {
-    background: rgb(18,19,18);
-    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(188, 12, 241) 100%);
+.purple {
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(155, 7, 240) 100%);
 }
 
-#y {
-    background-color: white;
-}
+.black {
+    margin-top: 0.5em;
 
-#u {
+    color: white;
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+
+    padding: 0.5em;
+
+    width: 7em;
+
+    text-align: center;
+
+    border-radius: 10px;
+
     background-color: black;
+
 }
 
-.slider-dots {
-    position: absolute;
+.white {
+    margin-top: 0.5em;
 
-    margin-top: 17.6em;
-    margin-left: 6.3em;
-}
-.slider-dots_item{
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 2px;
-    background-color: #ddd;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
+    color: black;
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+
+    padding: 0.5em;
+
+    width: 7em;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+} 

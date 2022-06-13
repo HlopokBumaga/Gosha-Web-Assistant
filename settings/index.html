@@ -22,7 +22,7 @@
                     <img src="../assets/img/GoshaIcon/GoshaNew.svg" alt="" class="icon">
                 </div>
                 <div class="two">
-                    <h2 class="ver">Version: Alpha 6.0</h2>
+                    <h2 class="ver">Version: Alpha 7.0</h2>
                     <h4 class="author">Author: <span>© Exerium 2021-2022</span></h4>
                 </div>
             </div>
@@ -48,147 +48,25 @@
                     <h3 class="text"> - Активация по голосу</h3>
                 </div>
                 <h4 class="info">
-                    Gosha будет в фоне слушать ваш голос и если вы произнесёте его имя он активируется.
+                    Gosha будет в фоне слушать ваш голос и если вы произнесёте его имя он активируется. <span class="text__warn">( Функция тестовая и может работать не коректно! )</span> 
                 </h4>
                 <h3 class="text2">Выберите фон: </h3>
-                <a class="prev" onclick="minusSlide()">&#10094;</a>
-                <div class="slider1">
-                    <div class="item" id="w">
-
+                <div class="wallpapers">
+                    <div class="cont1">
+                        <div class="blue" id="color">Синий</div>
+                        <div class="green" id="color">Зелёный</div>
+                        <div class="orange" id="color">Оранжевый</div>
                     </div>
-                
-                    <div class="item" id="e">
-
-                    </div>
-                
-                    <div class="item" id="r">
-
-                    </div>
-        
-                    <div class="item" id="t">
- 
-                    </div>
-
-                    <div class="item" id="y">
- 
-                    </div>
-
-                    <div class="item" id="u">
- 
+                    <div class="cont1">
+                        <div class="purple" id="color">Фиолетовый</div>
+                        <div class="black" id="color">Черный</div>
+                        <div class="white" id="color">Белый</div>
                     </div>
                 </div>
-                <div class="slider-dots">
-                    <span class="slider-dots_item" onclick="currentSlide(1)"></span> 
-                    <span class="slider-dots_item" onclick="currentSlide(2)"></span> 
-                    <span class="slider-dots_item" onclick="currentSlide(3)"></span> 
-                    <span class="slider-dots_item" onclick="currentSlide(4)"></span> 
-                    <span class="slider-dots_item" onclick="currentSlide(5)"></span> 
-                    <span class="slider-dots_item" onclick="currentSlide(6)"></span> 
-                </div>
-                <a class="next" onclick="plusSlide()">&#10095;</a>
             </div>
         </div>
 
         <h4 class="back">Назад</h4>
-        <script>
-            let body = document.querySelector(".body");
-            let back = document.querySelector(".back");
-            let sw = document.querySelector(".switch");
-            let inp = document.querySelector(".input");
-            
-            let slideIndex = 0;
-            let slides = document.querySelectorAll(".item");
-
-            if (localStorage.getItem("voiceActive") == 'true') {
-                inp.checked = true;
-            } else {
-                inp.checked = false;
-            }
-
-            sw.addEventListener("click", function () {
-                if (inp.checked) {
-                    localStorage.setItem("voiceActive", true);
-                } else {
-                    localStorage.setItem("voiceActive", false);
-                }
-            });
-
-            back.addEventListener("click", function () {
-                body.style.animation = "bganim 1s forwards";
-                setTimeout(function () {
-                    window.location.href = "../index.html";
-                }, 1000);
-            });
-
-            // function changeBg (slideIndex) {
-            //     if (slideIndex == 0 || localStorage.getItem("bg") == 0) {
-            //         localStorage.setItem("bg", 0);
-            //         body.style.background = "linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);";
-            //         body.style.backgroundRepeat = "no-repeat";
-            //         body.style.backgroundSize = "cover";
-            //     } if (slideIndex == 1 || localStorage.getItem("bg") == 1) {
-            //         localStorage.setItem("bg", 1);
-            //         body.style.background = "linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(219, 88, 13) 100%)";
-            //         body.style.backgroundRepeat = "no-repeat";
-            //         body.style.backgroundSize = "cover";
-            //     } if (slideIndex == 2 || localStorage.getItem("bg") == 2) {
-            //         localStorage.setItem("bg", 2);
-            //         body.style.background = "linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(8, 228, 107) 100%);";
-            //         body.style.backgroundRepeat = "no-repeat";
-            //         body.style.backgroundSize = "cover";
-            //     } if (slideIndex == 3 || localStorage.getItem("bg") == 3) {
-            //         localStorage.setItem("bg", 3);
-            //         body.style.background = "linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(188, 12, 241) 100%);";
-            //         body.style.backgroundRepeat = "no-repeat";
-            //         body.style.backgroundSize = "cover";
-            //     } if (slideIndex == 4 || localStorage.getItem("bg") == 4) {
-            //         localStorage.setItem("bg", 4);
-            //         body.style.backgroundColor = "white";
-            //         body.style.backgroundRepeat = "no-repeat";
-            //         body.style.backgroundSize = "cover";
-            //     } if (slideIndex == 5 || localStorage.getItem("bg") == 5) {
-            //         localStorage.setItem("bg", 5);
-            //         body.style.backgroundColor = "black";
-            //         body.style.backgroundRepeat = "no-repeat";
-            //         body.style.backgroundSize = "cover";
-            //     }
-            // }
-
-            showSlides(slideIndex);
-
-            function plusSlide() {
-                showSlides(slideIndex += 1);
-            }
-
-            function minusSlide() {
-                showSlides(slideIndex -= 1);
-
-            }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("item");
-                var dots = document.getElementsByClassName("slider-dots_item");
-                if (n > slides.length) {
-                    slideIndex = 1
-                }
-                if (n < 1) {
-                    slideIndex = slides.length
-                }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-                // changeBg(slideIndex);
-            }
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>

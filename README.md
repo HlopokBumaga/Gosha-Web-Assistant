@@ -23,6 +23,12 @@
 ---
 > ### GoshaWeb Alpha 5.0
 - New internet `search function`, bug fixes, new `README`
+---
+> ### GoshaWeb Alpha 6.0
+- Added `voice activation` function, added `settings menu`
+---
+> ### GoshaWeb Alpha 7.0
+- Added `background change`, `notes` function
 
 ## Instruction manual
 ![App Screenshot](https://i.ibb.co/YZMGPPZ/2022-04-23-143041436.png)
