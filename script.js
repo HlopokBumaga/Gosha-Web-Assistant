@@ -47,21 +47,12 @@ const appeals = {
 if (localStorage.getItem("todo") == null || localStorage.getItem("todo") == 'null') {
     console.log("...")
 } else {
-    dsBtn = false
-    gosha.style.filter = "brightness(50%)";
-    speakLight.style.opacity = "1";
-
-    const newTodo = new Audio("assets/sounds/speak/У вас есть одна заметка..mp3");
-    newTodo.play();
-
-    newTodo.onloadedmetadata = function () {
-        rtg = Math.round(jokeAudio.duration) * 1000;
-        setTimeout(function() {
-            speakLight.style.opacity = "0";
-            gosha.style.filter = "brightness(100%)";
-            dsBtn = true;
-        }, 3000)
-    };
+    setTimeout(function () {
+		outputText.innerHTML = "У вас есть новая заметка!"
+		setTimeout(function () {
+			outputText.innerHTML = `Привет, ${nameUser}. Чем сегодня займемся?`
+		}, 3000)
+	}, 3000)
 }
 
 // -----------------------------------------------------------------
