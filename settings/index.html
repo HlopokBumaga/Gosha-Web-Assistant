@@ -2,10 +2,11 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title>GoshaWeb Settings</title>
+        <title>Settings</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,59 +14,87 @@
 
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="../assets/img/GoshaIcon/GoshaNew.png" type="image/png">
-
     </head>
     <body class="body">
-        <div class="content_box">
-            <div class="socks">
-                <div class="one">
-                    <img src="../assets/img/GoshaIcon/GoshaNew.svg" alt="" class="icon">
-                </div>
-                <div class="two">
-                    <h2 class="ver">Version: Alpha 7.0</h2>
-                    <h4 class="author">Author: <span>© Exerium 2021-2022</span></h4>
-                </div>
+        <div class="info">
+            <h1 class="info__header">Информация</h1>
+            <div class="info__cont">
+                <img src="../assets/img/GoshaIcon/GoshaNew.png" alt="Gosha" class="cont__img">
+                <h1 class="cont__name">Gosha Web</h1>
+                <h2 class="cont__version">Beta 1.0</h2>
+                <h2 class="cont__jelly-fish">Jelly Fish</h2>
             </div>
-            <h3 class="opensource">
-                This is an open source project:
-            </h3>
-            <a href="https://github.com/Dmitry0802/Gosha-Web-Assistant" class="link" target="_blank">https://github.com/Dmitry0802/Gosha-Web-Assistant</a>
-
-            <h3 class="donate">
-                For the author to eat:
-            </h3>
-            <a href="https://boosty.to/dimak0802" class="link" target="_blank">https://boosty.to/dimak0802</a>
         </div>
-        
-        <div class="cnt">
-            <h1 class="name">Настройки</h1>
-            <div class="content">
-                <div class="three">
+        <a href="https://exerium.netlify.app" target="_blank" class="author">© Exerium 2021-2022</a>
+        <h2 class="whatsnew">Что нового?</h2>
+        <ul class="whatsnew__list">
+            <li class="list__item">Ускорена работа </li>
+            <li class="list__item">Добавлена система общения GSLA</li>
+            <li class="list__item">Функция “Погода”</li>
+            <li class="list__item">Анимированные уведомления</li>
+            <li class="list__item">Live обои</li>
+            <li class="list__item">Обновлённый дизайн</li>
+            <li class="list__item">Кодовое название версий ( Beta 1.0 - Jelly Fish )</li>
+        </ul>
+        <div class="settings">
+            <h1 class="info__header">Настройки</h1>
+            <div class="settings__cont">
+                <div class="cont__one-pos">
                     <label class="switch">
                         <input type="checkbox" class="input">
                         <span class="slider round"></span>
                     </label>
-                    <h3 class="text"> - Активация по голосу</h3>
+                    <h3 class="one-pos__text"> - Активация по голосу</h3>
                 </div>
-                <h4 class="info">
-                    Gosha будет в фоне слушать ваш голос и если вы произнесёте его имя он активируется. <span class="text__warn">( Функция тестовая и может работать не коректно! )</span> 
+                <h4 class="settings__cont-info">
+                    Gosha будет в фоне слушать ваш голос и если вы произнесёте его имя он активируется. <span class="text__warn">( ! Функция не доступна ! )</span> 
                 </h4>
-                <h3 class="text2">Выберите фон: </h3>
-                <div class="wallpapers">
-                    <div class="cont1">
+                <h3 class="cont__select-bg">Выберите фон: </h3>
+                <div class="cont__bgs">
+                    <div class="bgs__cont">
                         <div class="blue" id="color">Синий</div>
                         <div class="green" id="color">Зелёный</div>
                         <div class="orange" id="color">Оранжевый</div>
                     </div>
-                    <div class="cont1">
+                    <div class="bgs__cont">
                         <div class="purple" id="color">Фиолетовый</div>
                         <div class="black" id="color">Черный</div>
                         <div class="white" id="color">Белый</div>
                     </div>
                 </div>
+                <div class="cont-color-curr">
+                    <h3 class="current-color">Текущий цвет: </h3>
+                    <div class="color-curr"></div>
+                </div>
+                <div class="live-bg__cont">
+                    <div class="cont__live-bg">
+                        <label class="switch2">
+                            <input type="checkbox" class="input2">
+                            <span class="slider2 round"></span>
+                        </label>
+                        <h3 class="live-bg__text"> - Live обои</h3>
+                    </div>
+                </div>
+                <h4 class="settings__cont-info" id="ert">
+                    Фон Gosha будет ставиться случайно и зачастую будет состоять из картинок на случайную тему.
+                </h4>
+                <div class="season-box">
+                    <input type="checkbox" class="season" name="horns">
+                    <label for="season" class="checkbox__season-text">По сезонам</label>
+                </div>
+                <h4 class="settings__cont-info" id="ert">
+                    Если флаг "По сезонам" выставлен, то фон будет ставиться взависимости от сезона.
+                </h4>
+                <div class="cont__inp">
+                    <input type="text" size="20" class="input__text">
+                    <button class="inp__btn">Ввести</button>
+                    <button class="del">Удалить категорию</button>
+                </div>
+                <h4 class="settings__cont-info" id="erts">
+                    Введите ключевое слово по которому будет идти поиск картинки.
+                </h4>
             </div>
         </div>
-
         <h4 class="back">Назад</h4>
         <script src="script.js"></script>
     </body>

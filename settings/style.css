@@ -17,24 +17,175 @@
 }
 
 body, html {
-    background: rgb(18,19,18);
-    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgba(17,53,171,1) 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #270B36;
 
     width: 100vw;
     height: 100vh;
 
-    overflow: hidden;
-    position: fixed;
+    overflow-x: hidden;
 
     margin: 0px;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-/*-------- Свитчер --------*/
+/*-------- Информация --------*/
+.info__header {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 24px;
+    
+    color: #FFFFFF;
+
+    position: relative;
+
+    margin-right: -10em;
+}
+
+.info__cont {
+    height: 7em;
+    width: 23em;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+
+    background-image: url("../assets/img/Bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    margin-top: 4em;
+
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    margin-left: 5.1em;
+}
+
+.cont__img {
+    width: 6em;
+
+    margin-left: 0.5em;
+}
+
+.cont__name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    margin-left: 0.2em;
+}
+
+.cont__version {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: #FFFFFF;
+
+    margin-left: 0.3em;
+    margin-top: 1em;
+}
+
+.cont__jelly-fish {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+
+    color: #FFFFFF;
+
+    margin-left: 0.3em;
+    margin-top: -1.1em; 
+}
+
+.author {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    margin-top: 0.4em;
+    margin-left: 14em;
+
+    text-decoration: none;
+}
+
+.whatsnew {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+
+    margin-top: 2em;
+}
+
+.whatsnew__list {
+    margin-top: -0.2em;
+}
+
+.list__item {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+
+    padding: 0.2em;
+}
+
+/* Настройки */
+.settings {
+    margin-right: -6em;
+}
+
+.settings__cont {
+    height: 40em;
+    width: 23em;
+
+    background: #270B36;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+
+    position: relative;
+
+    margin-left: -6em;
+}
+
+/* Свитчер */
+.cont__one-pos {
+    display: flex;
+    flex-direction: row;
+}
 
 .switch {
     position: relative;
@@ -42,14 +193,14 @@ body, html {
     width: 60px;
     height: 34px;
 
-    margin-top: 4em;
+    margin-top: 1em;
     margin-left: 1em;
+
+    filter: brightness(50%);
 }
 
-/* Hide default HTML checkbox */
 .switch input {display:none;}
 
-/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -97,194 +248,49 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/*-------- Контент --------*/
-
-.back {
-    padding: 0.5em;
-    margin: 0 auto;
-    margin-top: 0.5em;
-
-    color: black;
-    text-decoration: none;
-
-    background-color: white;
-
-    font-family: "montserrat", sans-serif;
-    font-weight: 500;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 3em;
-
-    border-radius: 10px;
+.text__warn {
+    font-weight: 600;
+    color: red;
 }
 
-.text {
-    position: absolute;
+.one-pos__text {
     font-family: "montserrat", sans-serif;
     color: white;
     font-weight: 400;
 
-    margin-left: 4.5em;
-    margin-top: -1.7em;
-}
-
-.text2 {
-    position: absolute;
-    font-family: "montserrat", sans-serif;
-    color: white;
-    font-weight: 400;
-
-    margin-left: 0.8em;
-    margin-top: 6.7em;
-}
-
-/*--- Данные о Gosha ---*/
-.content_box {
-    background: linear-gradient(341.83deg, #EA2B2B -3.66%, #115A71 87.9%);
-    height: 14.3em;
-    width: 20em;
-
-    margin: 0 auto;
-    margin-top: 5px;
-
-    border-radius: 30px;
-
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-.socks {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    margin-top: 0.1em;
-}
-
-.icon {
-    width: 6em;
-
+    margin-top: 1.12em;
     margin-left: 0.5em;
+
+    filter: brightness(50%);
 }
 
-.ver {
-    font-family: "montserrat", sans-serif;
-    color: white;
-    font-weight: 300;
-    font-size: 1.4em;
-}
-
-.two {
-    margin-left: 0.5em;
-}
-
-.author {
-    font-family: "montserrat", sans-serif;
-    color: white;
-    font-weight: 300;
-
-    margin-top: -1em;
-}
-
-.name {
-    display: flex;
-    justify-content: center;
-
-    font-family: "montserrat", sans-serif;
-    color: white;
-    font-weight: 500;
-}
-
-.content {
-    background: rgb(223,13,208);
-    background: linear-gradient(150deg, rgba(223,13,208,1) 0%, rgba(83,36,170,1) 100%);
-    
-    height: 19em;
-    width: 20em;
-
-    margin: 0 auto;
-
-    border-radius: 30px;
-}
-
-.cnt {
-    margin-top: 2em;
-}
-
-.three {
-    position: absolute;
-    width: 20em;
-
-    margin-top: -3em;
-}
-
-.info {
+.settings__cont-info {
     font-family: "montserrat", sans-serif;
     color: rgb(201, 194, 194);
     font-weight: 400;
     font-size: 0.8em;
 
-    margin-top: 4.5em;
+    margin-top: -0.2em;
     margin-left: 1.3em;
 
-    width: 22em;
+    width: 23em;
 
     text-align: justify;
-
-    position: absolute;
+    filter: brightness(50%);
 }
 
-.opensource {
+.cont__select-bg {
     font-family: "montserrat", sans-serif;
     color: white;
-    font-weight: 200;
-    font-size: 1.1em;
-
-    margin-left: 1em;
-    margin-top: -0.4em;
-}
-
-.link {
-    font-family: "montserrat", sans-serif;
-    color: lightgreen;
     font-weight: 400;
-    font-size: 0.7em;
 
-    margin-left: 1.6em;
-    margin-top: -1em;
+    margin-left: 0.9em;
 }
 
-.donate {
-    font-family: "montserrat", sans-serif;
-    color: white;
-    font-weight: 200;
-    font-size: 1.1em;
-
-    margin-left: 1em;
-    margin-top: 0.8em;
-}
-
-span {
-    font-size: 0.8em;
-}
-
-.text__warn {
-    font-size: 1em;
-    font-weight: bold;
-}
-
-/*--- wallpaper ---*/
-.wallpapers {
-    margin-top: 10em;
-
-    position: absolute;
+.cont__bgs {
     margin-left: 1em;
 
-    width: 17.5em;
+    width: 21em;
     height: 8em;
 
     display: flex;
@@ -299,7 +305,7 @@ span {
 
     padding: 0.5em;
 
-    width: 7em;
+    width: 9em;
 
     text-align: center;
 
@@ -334,7 +340,7 @@ span {
 
     padding: 0.5em;
 
-    width: 7em;
+    width: 9em;
 
     text-align: center;
 
@@ -353,7 +359,7 @@ span {
 
     padding: 0.5em;
 
-    width: 7em;
+    width: 9em;
 
     text-align: center;
 
@@ -361,4 +367,211 @@ span {
 
     background-color: white;
 
-} 
+}
+
+.back {
+    padding: 0.5em;
+    margin: 0 auto;
+    margin-top: 1em;
+
+    color: black;
+    text-decoration: none;
+
+    background-color: white;
+
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3em;
+
+    border-radius: 10px;
+}
+
+.current-color {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+
+    margin-left: 0.9em;
+}
+
+.color-curr {
+    background-color: #2196F3;
+
+
+    width: 1.5em;
+    height: 1.5em;
+
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.cont-color-curr {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-around;
+
+    width: 20em;
+}
+
+/* Свитчер */
+.switch2 {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.switch2 input {display:none;}
+
+.slider2 {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider2:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider2 {
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+input:focus + .slider2 {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider2:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider2.round {
+    border-radius: 34px;
+}
+
+.slider2.round:before {
+    border-radius: 50%;
+}
+
+.cont__live-bg {
+    display: flex;
+    flex-direction: row;
+}
+
+.live-bg__text {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+
+    margin-top: 1.12em;
+    margin-left: 0.5em;
+}
+
+#ert {
+    filter: brightness(100%);
+}
+
+.checkbox__season-text {
+    color: white;
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+}
+
+.season {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.season-box {
+    display: flex;
+    align-items: center;
+
+    margin-left: 0.8em;
+    margin-top: -0.5em;
+}
+
+.checkbox__time-text {
+    color: white;
+    font-family: "montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.time {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.time-box {
+    display: flex;
+    align-items: center;
+
+    margin-left: 0.8em;
+    margin-top: -0.5em;
+}
+
+.input__text {
+    margin-left: 1.2em;
+    height: 1.5em;
+}
+
+.inp__btn {
+    color: white;
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+
+    border: none;
+
+    background: linear-gradient(333deg, rgba(18,19,18,1) 0%, rgba(0,14,5,1) 43%, rgb(240, 147, 7) 100%);
+
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.del {
+    color: white;
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+
+    border: none;
+
+    background-color: red; 
+
+    padding: 0.5em;
+    border-radius: 5px;
+
+    margin-left: 1.2em;
+    margin-top: 0.3em;
+}
+
+#erts {
+    filter: brightness(100%);
+    margin-top: 0.3em;
+}

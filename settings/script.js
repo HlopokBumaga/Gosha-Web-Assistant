@@ -1,84 +1,93 @@
 let body = document.querySelector(".body");
 let back = document.querySelector(".back");
+let color = document.querySelectorAll("#color");
+let currentColor = document.querySelector(".color-curr");
+
 let sw = document.querySelector(".switch");
 let inp = document.querySelector(".input");
-let color = document.querySelectorAll("#color");
 
-setColor();
+let sw2 = document.querySelector(".switch2");
+let inp2 = document.querySelector(".input2");
 
-function setColor() {
+let season = document.querySelector(".season");
+let btn = document.querySelector(".inp__btn");
+let input = document.querySelector(".input__text");
+let del = document.querySelector(".del");
+
+changeCurrentColor();
+
+function changeCurrentColor() {
     if (localStorage.getItem("colorBg") == 0) {
-        body.style.animation = "bganim 1s forwards";
-        setTimeout(function () {
-            body.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(17, 53, 171, 1) 100%)";
-            body.style.backgroundRepeat = "no-repeat";
-            body.style.backgroundSize = "cover";
-            body.style.animation = "bganimstart 1s forwards";
-        }, 1000);
+        currentColor.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(17, 53, 171, 1) 100%)";
     } if (localStorage.getItem("colorBg") == 1) {
-        body.style.animation = "bganim 1s forwards";
-        setTimeout(function () {
-            body.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(8, 228, 107, 1) 100%)";
-            body.style.backgroundRepeat = "no-repeat";
-            body.style.backgroundSize = "cover";
-            body.style.animation = "bganimstart 1s forwards";
-        }, 1000);
+        currentColor.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(8, 228, 107, 1) 100%)";
     } if (localStorage.getItem("colorBg") == 2) {
-        body.style.animation = "bganim 1s forwards";
-        setTimeout(function () {
-            body.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(219, 88, 13, 1) 100%)";
-            body.style.backgroundRepeat = "no-repeat";
-            body.style.backgroundSize = "cover";
-            body.style.animation = "bganimstart 1s forwards";
-        }, 1000);
+        currentColor.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(219, 88, 13, 1) 100%)";
     } if (localStorage.getItem("colorBg") == 3) {
-        body.style.animation = "bganim 1s forwards";
-        setTimeout(function () {
-            body.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(188, 12, 241, 1) 100%)";
-            body.style.backgroundRepeat = "no-repeat";
-            body.style.backgroundSize = "cover";
-            body.style.animation = "bganimstart 1s forwards";
-        }, 1000);
+        currentColor.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(188, 12, 241, 1) 100%)";
     } if (localStorage.getItem("colorBg") == 4) {
-        body.style.animation = "bganim 1s forwards";
-        setTimeout(function () {
-            body.style.background = "black";
-            body.style.backgroundRepeat = "no-repeat";
-            body.style.backgroundSize = "cover";
-            body.style.animation = "bganimstart 1s forwards";
-        }, 1000);
+        currentColor.style.background = "black";
     } if (localStorage.getItem("colorBg") == 5) {
-        body.style.animation = "bganim 1s forwards";
-        setTimeout(function () {
-            body.style.background = "white";
-            body.style.backgroundRepeat = "no-repeat";
-            body.style.backgroundSize = "cover";
-            body.style.animation = "bganimstart 1s forwards";
-        }, 1000);
+        currentColor.style.background = "white";
     }
 }
 
 function changeColor(colorIndex) {
     if (colorIndex == 0) {
         localStorage.setItem("colorBg", 0);
-        setColor();
+        changeCurrentColor()
     } if (colorIndex == 1) {
         localStorage.setItem("colorBg", 1);
-        setColor();
+        changeCurrentColor()
     } if (colorIndex == 2) {
         localStorage.setItem("colorBg", 2);
-        setColor();
+        changeCurrentColor()
     } if (colorIndex == 3) {
         localStorage.setItem("colorBg", 3);
-        setColor();
+        changeCurrentColor()
     } if (colorIndex == 4) {
         localStorage.setItem("colorBg", 4);
-        setColor();
+        changeCurrentColor()
     } if (colorIndex == 5) {
         localStorage.setItem("colorBg", 5);
-        setColor();
+        changeCurrentColor()
     }
 }
+
+sw.addEventListener("click", function () {
+    if (inp.checked) {
+        inp.checked = true;
+        setTimeout(function () {
+            inp.checked = false;
+        }, 200)
+    }
+});
+
+if (localStorage.getItem("liveWallpaper") == 'true') {
+    inp2.checked = true;
+} else {
+    inp2.checked = false;
+}
+
+if (localStorage.getItem("season") == 'true') {
+    season.checked = true;
+} else {
+    season.checked = false;
+}
+
+del.addEventListener("click", function () {
+    localStorage.setItem("tagBg", '');
+    alert("Категория удалена!");
+})
+
+btn.addEventListener("click", function () {
+    if (input.value != '') {
+        localStorage.setItem("tagBg", input.value);
+        alert("Категория создана!");
+    } else {
+        localStorage.setItem("tagBg", '');
+    }
+})
 
 color[0].addEventListener("click", function () { changeColor(0) });
 color[1].addEventListener("click", function () { changeColor(1) });
@@ -87,17 +96,19 @@ color[3].addEventListener("click", function () { changeColor(3) });
 color[4].addEventListener("click", function () { changeColor(4) });
 color[5].addEventListener("click", function () { changeColor(5) });
 
-if (localStorage.getItem("voiceActive") == 'true') {
-    inp.checked = true;
-} else {
-    inp.checked = false;
-}
-
-sw.addEventListener("click", function () {
-    if (inp.checked) {
-        localStorage.setItem("voiceActive", true);
+season.addEventListener("click", function () {
+    if (season.checked) {
+        localStorage.setItem("season", true);
     } else {
-        localStorage.setItem("voiceActive", false);
+        localStorage.setItem("season", false);
+    }
+});
+
+sw2.addEventListener("click", function () {
+    if (inp2.checked) {
+        localStorage.setItem("liveWallpaper", true);
+    } else {
+        localStorage.setItem("liveWallpaper", false);
     }
 });
 

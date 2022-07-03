@@ -82,8 +82,30 @@ hr {
     }
 }
 
-.fade-in {
-    animation: fade-in 1s;
+@keyframes notifianim {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes notifibackanim {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.notifianim {
+    animation: notifianim 1s forwards;
+}
+
+.notifibackanim {
+    animation: notifibackanim 1s forwards;
 }
 
 /* Классы */
@@ -97,9 +119,11 @@ hr {
     display: block;
 
     transition: ease-in-out 0.4s;
+
+    animation: none;
 }
 
-.sp {
+.content__speak-animation {
     width: 8em;
     height: 1em;
 
@@ -119,7 +143,7 @@ hr {
     flex-direction: column;
 }
 
-.text__recog {
+.content__text-output {
     color: white;
     font-family: 'Montserrat', sans-serif;
 
@@ -140,5 +164,24 @@ hr {
     .sett {
         width: 3em;
         height: 3em;
+    }
+}
+
+.notif-todo {
+    position: absolute;
+
+    width: 31em;
+
+    margin-top: 4em;
+
+    transform: translateX(-100%);
+}
+
+@media screen and (max-width: 460px) {
+    .notif-todo {
+        position: absolute;
+    
+        width: 100%;
+        margin-top: 3em;
     }
 }
