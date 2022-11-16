@@ -17,7 +17,7 @@
 }
 
 body, html {
-    background-color: #270B36;
+    background-color: #1f2020;
 
     width: 100vw;
     height: 100vh;
@@ -50,10 +50,9 @@ body, html {
     height: 7em;
     width: 23em;
 
-    border: 2px solid #FFFFFF;
     border-radius: 20px;
 
-    background-image: url("../assets/img/Bg.png");
+    background-image: url("../assets/img/Bg2.png");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -104,7 +103,7 @@ body, html {
     margin-top: 1em;
 }
 
-.cont__jelly-fish {
+.cont__bee {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -172,7 +171,8 @@ body, html {
     height: 40em;
     width: 23em;
 
-    background: #270B36;
+    background-color: #1f2020;
+
     border: 2px solid #FFFFFF;
     border-radius: 20px;
 
@@ -498,26 +498,6 @@ input:checked + .slider2:before {
     filter: brightness(100%);
 }
 
-.checkbox__season-text {
-    color: white;
-    font-family: "montserrat", sans-serif;
-    color: white;
-    font-weight: 400;
-}
-
-.season {
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.season-box {
-    display: flex;
-    align-items: center;
-
-    margin-left: 0.8em;
-    margin-top: -0.5em;
-}
-
 .checkbox__time-text {
     color: white;
     font-family: "montserrat", sans-serif;
@@ -574,4 +554,24 @@ input:checked + .slider2:before {
 #erts {
     filter: brightness(100%);
     margin-top: 0.3em;
+}
+
+.tag-walpaper__name {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+}
+
+.tag-walpaper__tag {
+    font-family: "montserrat", sans-serif;
+    color: white;
+    font-weight: 400;
+}
+
+.tag-walpaper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin-top: -1em;
 }

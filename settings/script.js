@@ -9,10 +9,15 @@ let inp = document.querySelector(".input");
 let sw2 = document.querySelector(".switch2");
 let inp2 = document.querySelector(".input2");
 
-let season = document.querySelector(".season");
 let btn = document.querySelector(".inp__btn");
 let input = document.querySelector(".input__text");
 let del = document.querySelector(".del");
+
+let tagName = document.querySelector(".tag-walpaper__tag");
+
+let bee = document.querySelector(".cont__bee");
+let beeCoutner = true;
+const beeSound = new Audio;
 
 changeCurrentColor();
 
@@ -63,29 +68,47 @@ sw.addEventListener("click", function () {
     }
 });
 
+bee.addEventListener("click", function () {
+    if (beeCoutner == true) {
+        beeCoutner = false;
+        beeSound.src = "Egg.mp3";
+        beeSound.play();
+        setTimeout(function () {
+            beeCoutner = true;
+        }, 4000);
+    }
+});
+
 if (localStorage.getItem("liveWallpaper") == 'true') {
     inp2.checked = true;
 } else {
     inp2.checked = false;
 }
 
-if (localStorage.getItem("season") == 'true') {
-    season.checked = true;
-} else {
-    season.checked = false;
-}
-
 del.addEventListener("click", function () {
-    localStorage.setItem("tagBg", '');
-    alert("Категория удалена!");
+    if (localStorage.getItem("liveWallpaper") == 'true') {
+        localStorage.setItem("tagBg", '');
+        alert("Категория удалена!");
+        tagName.innerHTML = "---";
+    }
 })
 
+if (localStorage.getItem("tagBg") == " " || localStorage.getItem("tagBg") == "" || localStorage.getItem("tagBg") == null) {
+    tagName.innerHTML = "---";
+} else {
+    tagName.innerHTML = localStorage.getItem("tagBg");
+}
+
 btn.addEventListener("click", function () {
-    if (input.value != '') {
-        localStorage.setItem("tagBg", input.value);
-        alert("Категория создана!");
-    } else {
-        localStorage.setItem("tagBg", '');
+    if (localStorage.getItem("liveWallpaper") == 'true') {
+        if (input.value != '' || input.value != ' ') {
+            localStorage.setItem("tagBg", input.value);
+            alert("Категория создана!");
+            tagName.innerHTML = localStorage.getItem("tagBg");
+        } else {
+            localStorage.setItem("tagBg", '');
+            tagName.innerHTML = "---";
+        }
     }
 })
 
@@ -96,14 +119,6 @@ color[3].addEventListener("click", function () { changeColor(3) });
 color[4].addEventListener("click", function () { changeColor(4) });
 color[5].addEventListener("click", function () { changeColor(5) });
 
-season.addEventListener("click", function () {
-    if (season.checked) {
-        localStorage.setItem("season", true);
-    } else {
-        localStorage.setItem("season", false);
-    }
-});
-
 sw2.addEventListener("click", function () {
     if (inp2.checked) {
         localStorage.setItem("liveWallpaper", true);
@@ -113,7 +128,7 @@ sw2.addEventListener("click", function () {
 });
 
 back.addEventListener("click", function () {
-    body.style.animation = "bganim 1s forwards";
+    body.style.animation = "bganim 0.6s forwards";
     setTimeout(function () {
         window.location.href = "../index.html";
     }, 1000);

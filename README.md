@@ -29,6 +29,20 @@
 ---
 > ### GoshaWeb Alpha 7.0
 - Added `background change`, `notes` function
+---
+> ### GoshaWeb Beta 1.0 | Jelly Fish
+- Accelerated work
+- `GSLA communication system` added
+- The `“Weather”` function
+- Animated notifications
+- `Live` wallpaper
+- Updated design
+---
+> ### GoshaWeb Beta 2.0 | Bee
+- The `GSLA communication system` has been `updated`
+- `Download` added
+- Expanded the list of requests
+- Fixed `bugs`
 
 ## Instruction manual
 ![App Screenshot](https://i.ibb.co/YZMGPPZ/2022-04-23-143041436.png)

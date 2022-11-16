@@ -38,29 +38,28 @@ if (module.nameUser.value == null) {
 }
 
 if (localStorage.getItem("liveWallpaper") == 'true') {
-    if (localStorage.getItem("season") == 'false') {
+    if (localStorage.getItem("tagBg") == '' || localStorage.getItem("tagBg") == ' ') {
         module.body.style.backgroundImage = `url("https://source.unsplash.com/random/${document.documentElement.clientWidth}x${document.documentElement.clientHeight}")`;
-    } if (localStorage.getItem("tagBg") != '') {
+    } if (localStorage.getItem("tagBg") != '' || localStorage.getItem("tagBg") != ' ') {
         module.body.style.backgroundImage = `url("https://source.unsplash.com/random/${document.documentElement.clientWidth}x${document.documentElement.clientHeight}/?${localStorage.getItem("tagBg")}")`;
-    } else {
-        let time = new Date;
-        if (time.getMonth() == 12 || time.getMonth() <= 2) {
-            var currSeason = "winter";
-        } if (time.getMonth() >= 3 && time.getMonth() <= 5) {
-            var currSeason = "spring";
-        } if (time.getMonth() >= 6 && time.getMonth() <= 8) {
-            var currSeason = "summer";
-        } if (time.getMonth() >= 9 && time.getMonth() <= 11) {
-            var currSeason = "autumn";
-        }
-        module.body.style.backgroundImage = `url("https://source.unsplash.com/random/${document.documentElement.clientWidth}x${document.documentElement.clientHeight}/?${currSeason}")`;
     }
 } else {
     setColor();
 }
 
+window.onload = function() {
+    document.querySelector('.preloader').classList.add("loaded_hiding");
+    setTimeout(function () {
+        document.querySelector('.preloader').style.display = "none";
+    }, 1000);
+};
+
 function setColor() {
-    if (localStorage.getItem("colorBg") == 0) {
+    if (localStorage.getItem("colorBg") == null) {
+        module.body.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(17, 53, 171, 1) 100%)";
+        module.body.style.backgroundRepeat = "no-repeat";
+        module.body.style.backgroundSize = "cover";
+    } if (localStorage.getItem("colorBg") == 0) {
         module.body.style.background = "linear-gradient(333deg, rgba(18, 19, 18, 1) 0%, rgba(0, 14, 5, 1) 43%, rgba(17, 53, 171, 1) 100%)";
         module.body.style.backgroundRepeat = "no-repeat";
         module.body.style.backgroundSize = "cover";
@@ -110,7 +109,7 @@ module.gosha.addEventListener("click", function() {
 // Настройки
 module.settingsBtn.addEventListener("click", function () {
     module.settingsBtn.style.animation = "settanim 0.5s";
-    module.body.style.animation = "bganim 1s forwards";
+    module.body.style.animation = "bganim 0.6s forwards";
     setTimeout(function () {
         window.location.href = "settings/index.html";
     }, 1000);

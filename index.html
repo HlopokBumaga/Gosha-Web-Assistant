@@ -6,6 +6,7 @@
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
         <link rel="shortcut icon" href="assets/img/GoshaIcon/GoshaNew.png" type="image/png">
         <link rel="stylesheet" href="assets/css/style.css">
@@ -15,8 +16,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </head>
     <body class="body">
+        <div class="preloader">
+            <div class="preloader__row">
+                <img src="assets/img/GoshaIcon/GoshaNew2.png" alt="Gosha__Btn" class="Gosha-Load">
+                <div class="text-load">
+                    <h3 class="Name-Load">Gosha Web</h3>
+                    <h4 class="Exerium-Name">by Exerium</h4>
+                </div>
+            </div>
+        </div>
         <img src="assets/img/settings.svg" alt="Settings" class="sett">
         <img src="assets/img/Notification/Group 1.svg" alt="У вас есть заметка!" class="notif-todo">
         <div class="gosha__content">
